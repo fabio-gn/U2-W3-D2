@@ -81,12 +81,14 @@ form.addEventListener('submit', (e)=>{
 });
 removeBtn.addEventListener('click', removeLast);
 
+
+//TIMER---------------------------------------------------------------------------
 let timerDiv = document.getElementById('timer')
-let memorizedCounter = parseInt(localStorage.getItem('timer'));
+let memorizedCounter = parseInt(sessionStorage.getItem('timer'));
 let counter = memorizedCounter ? memorizedCounter : 0;
 
 const timer = setInterval(()=>{
     timerDiv.innerText = counter;
     counter ++;
-    localStorage.setItem('timer', counter -1);
+    sessionStorage.setItem('timer', counter -1);
 }, 1000)
